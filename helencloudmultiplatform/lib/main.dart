@@ -3,6 +3,13 @@ import 'package:flutter_progress_hud/flutter_progress_hud.dart';
 import 'package:http/http.dart' as http;
 import 'package:video_player/video_player.dart';
 
+const kWhite = Color(0xFFEDF1FF);
+const kRed = Colors.red;
+const kPurple = Color(0xFF5F4B8B);
+const kBlue = Color(0xFF00A1DF);
+const kGreen = Color(0xFF40EDA3);
+const kBlack = Color(0xFF3B3C40);
+
 void main() {
   runApp(const MyApp());
 }
@@ -88,22 +95,21 @@ class _MyHomePageState extends State<MyHomePage> {
       return "";
     }
     try {
-      var url = Uri.parse('https://34.148.239.128:8080');
+      var url = Uri.parse('http://34.148.239.128:8080');
 
       var response = await http.post(
         url,
-        headers: {
-          'Accept': 'application/json',
-          'Access-Control-Allow-Origin': "*",
-        },
+        headers: {'Accept': 'application/json'},
         body: {'sentence': sentence, 'language': language},
       );
 
       print('Response body: ${response.body}');
 
       return response.body;
+      //return "https://storage.googleapis.com/helen-render-storage/helen34109.mp4";
     } catch (e) {
-      return "https://storage.googleapis.com/helen-render-storage/helen32388.mp4";
+      print("ERROR: " + e.toString());
+      return "https://storage.googleapis.com/helen-render-storage/helen34109.mp4";
     }
   }
 
@@ -170,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Type sentence to convert',
+                        labelText: 'Type sign language',
                         prefixIcon: Icon(
                           Icons.language,
                         ),
@@ -219,6 +225,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       size: 62.0,
                     ),
                   ),
+                  const SizedBox(
+                    height: 15.0,
+                    width: 15.0,
+                  ),
                   Visibility(
                     visible:
                         _controllerVideo.value.isInitialized ? true : false,
@@ -226,7 +236,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.all(25.0),
                       child: Center(
                         child: AspectRatio(
-                          aspectRatio: _controllerVideo.value.aspectRatio,
+                          aspectRatio: Theme.of(context).platform !=
+                                      TargetPlatform.android &&
+                                  Theme.of(context).platform !=
+                                      TargetPlatform.iOS
+                              ? _controllerVideo.value.aspectRatio * 3
+                              : _controllerVideo.value.aspectRatio,
                           child: VideoPlayer(_controllerVideo),
                         ),
                       ),
