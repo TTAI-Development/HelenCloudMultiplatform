@@ -2,9 +2,8 @@
 
 helen Cloud Integration Multiplatform
 
-<center>
 https://user-images.githubusercontent.com/46535943/159822206-199940ed-f983-40f2-a441-46d885c9af95.mov
-</center>
+
 
 ## Getting Started
 
