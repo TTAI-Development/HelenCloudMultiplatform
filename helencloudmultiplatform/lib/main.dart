@@ -95,7 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
       return "";
     }
     try {
-      var url = Uri.parse('http://34.148.239.128:8080');
+      var url = Uri.parse(
+          'http://helencloudrendererus2sizenvidia.eastus.azurecontainer.io:8080');
 
       var response = await http.post(
         url,
@@ -106,10 +107,9 @@ class _MyHomePageState extends State<MyHomePage> {
       print('Response body: ${response.body}');
 
       return response.body;
-      //return "https://storage.googleapis.com/helen-render-storage/helen34109.mp4";
     } catch (e) {
       print("ERROR: " + e.toString());
-      return "https://storage.googleapis.com/helen-render-storage/helen34109.mp4";
+      return "";
     }
   }
 
