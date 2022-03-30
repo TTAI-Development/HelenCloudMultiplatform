@@ -10,21 +10,21 @@ https://user-images.githubusercontent.com/46535943/160893621-854fa8ed-c05f-4486-
 
 This project is a starting point to implement helen Cloud SaaS in any backend.<br />
 <br />
-SaaS access method:
-  HTTP POST method
-  
-POST Method parameters:
-  Headers: "Accept: application/json"
-  Body: {'sentence':<TEXT2CONVERT>, 'language':<SIGNLANGUAGE>}
-  
-Currently Supported Sign Lnaguages:
-  lesco
-  
-Response type:
-  <STRING> -> If successful returns video URL | Else returns error message
-    
-
-For production please contact @ hello@helenai.com
-
-Demo does not support user validation
-
+SaaS access method:<br />
+  HTTP POST method<br />
+<br />
+POST Method parameters:<br />
+  Headers: "Accept: application/json"<br />
+  Body: {'sentence':<TEXT2CONVERT>, 'language':<SIGNLANGUAGE>}<br />
+<br />
+Currently Supported Sign Lnaguages:<br />
+  lesco<br />
+<br />
+Response type:<br />
+  <STRING> -> If successful returns video URL | Else returns error message<br />
+<br />
+<br />
+For production please contact @ hello@helenai.com<br />
+<br />
+Demo does not support user validation<br />
+<br />
