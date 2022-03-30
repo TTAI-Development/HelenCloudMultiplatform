@@ -42,8 +42,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late TextEditingController _controllerSentence;
   String sentenceInput = "";
-  late TextEditingController _controllerLanguage;
-  String languageInput = "";
+  String languageInput = "lesco";
   late VideoPlayerController _controllerVideo;
   String urlVideoCloud = "";
 
@@ -69,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
           content: SingleChildScrollView(
             child: ListBody(
               children: const <Widget>[
-                Text('Sentence and/or Language input(s) cannot be empty.'),
+                Text('Sentence cannot be empty.'),
               ],
             ),
           ),
@@ -117,7 +116,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _controllerSentence = TextEditingController();
-    _controllerLanguage = TextEditingController();
     _controllerVideo = VideoPlayerController.network('')
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
@@ -128,7 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void dispose() {
     _controllerSentence.dispose();
-    _controllerLanguage.dispose();
     _controllerVideo.dispose();
     super.dispose();
   }
@@ -166,22 +163,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(
                     height: 25.0,
                     width: 25.0,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: TextField(
-                      controller: _controllerLanguage,
-                      onChanged: (String value) {
-                        languageInput = value;
-                      },
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Type sign language',
-                        prefixIcon: Icon(
-                          Icons.language,
-                        ),
-                      ),
-                    ),
                   ),
                   IconButton(
                     onPressed: () async {
