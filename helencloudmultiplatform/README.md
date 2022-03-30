@@ -12,19 +12,21 @@ This project is a starting point to implement helen Cloud SaaS in any backend.<b
 <br />
 SaaS access method:<br />
 <ul>
-<li>HTTP POST method</li>
+<li>HTTP POST method. </li>
 </ul>
-<br />
 POST Method parameters:<br />
-> Headers: "Accept: application/json"<br />
-> Body: {'sentence':<TEXT2CONVERT>, 'language':<SIGNLANGUAGE>}<br />
-<br />
+<ul>
+<li>Headers: "Accept: application/json" </li>
+<li>Body: {'sentence':<TEXT2CONVERT>, 'language':<SIGNLANGUAGE>} </li>
+</ul>
 Currently Supported Sign Lnaguages:<br />
-> lesco<br />
-<br />
+<ul>
+<il>lesco</il>
+</ul>
 Response type:<br />
-> <STRING> -> If successful returns video URL | Else returns error message<br />
-<br />
+<ul>
+<il> STRING -> If successful returns video URL | Else returns error message. </il>
+<ul/>
 <br />
 For production please contact @ hello@helenai.com<br />
 <br />
