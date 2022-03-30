@@ -19,14 +19,14 @@ POST Method parameters:<br />
 <li>Headers: "Accept: application/json" </li>
 <li>Body: {'sentence':<TEXT2CONVERT>, 'language':<SIGNLANGUAGE>} </li>
 </ul>
-Currently Supported Sign Lnaguages:<br />
+Currently Supported Sign Languages:<br />
 <ul>
-<il>lesco</il>
+<li>lesco</li>
 </ul>
 Response type:<br />
 <ul>
-<il> STRING -> If successful returns video URL | Else returns error message. </il>
-<ul/>
+<li> STRING -> If successful returns video URL | Else returns error message. </li>
+</ul>
 <br />
 For production please contact @ hello@helenai.com<br />
 <br />
